@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Userphotos
+    <a href="/userphotos/new" class="btn btn-lg btn-success">New Userphoto</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Review</th>
+        <th>Photo</th>
+        <th>Restaurant</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @userphotos.each do |userphoto| %>
+      <tr>
+        <td><%= userphoto.review_id %></td>
+        <td><%= userphoto.photo %></td>
+        <td><%= userphoto.restaurant_id %></td>
+        <td>
+          <a href="/userphotos/<%= userphoto.id %>" class="btn btn-primary">Show</a>
+          <a href="/userphotos/<%= userphoto.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_userphoto/<%= userphoto.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
