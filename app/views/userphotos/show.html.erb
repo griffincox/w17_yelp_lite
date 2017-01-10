@@ -6,13 +6,25 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Review</dt>
-      <dd><%= @userphoto.review_id %></dd>
+      <dd>
+        <% if @userphoto.review.present? %>
+          <a href="/reviews/<%= @userphoto.review_id %>">
+            <%= @userphoto.review.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Photo</dt>
       <dd><img src="<%= @userphoto.photo %>" class="img-responsive"></dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @userphoto.restaurant_id %></dd>
+      <dd>
+        <% if @userphoto.restaurant.present? %>
+          <a href="/restaurants/<%= @userphoto.restaurant_id %>">
+            <%= @userphoto.restaurant.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

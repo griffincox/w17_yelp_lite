@@ -17,9 +17,21 @@
 
       <% @userphotos.each do |userphoto| %>
       <tr>
-        <td><%= userphoto.review.user_id %></td>
+        <td>
+          <% if userphoto.review.present? %>
+            <a href="/reviews/<%= userphoto.review.id %>">
+              <%= userphoto.review.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td><img src='<%= userphoto.photo %>' class='img-responsive'></td>
-        <td><%= userphoto.restaurant.name %></td>
+        <td>
+          <% if userphoto.restaurant.present? %>
+            <a href="/restaurants/<%= userphoto.restaurant.id %>">
+              <%= userphoto.restaurant.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/userphotos/<%= userphoto.id %>" class="btn btn-primary">Show</a>
           <a href="/userphotos/<%= userphoto.id %>/edit" class="btn btn-warning">Edit</a>
