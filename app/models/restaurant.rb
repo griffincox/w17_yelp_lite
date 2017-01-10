@@ -1,6 +1,10 @@
 class Restaurant < ApplicationRecord
   # Direct associations
 
+  has_many   :reviewphotos,
+             :class_name => "Userphoto",
+             :dependent => :destroy
+
   has_many   :reviews,
              :dependent => :destroy
 
