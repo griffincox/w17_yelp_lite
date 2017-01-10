@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "restaurants#index"
   # Routes for the Userphoto resource:
   # CREATE
   get "/userphotos/new", :controller => "userphotos", :action => "new"
