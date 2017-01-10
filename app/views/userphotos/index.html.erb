@@ -18,7 +18,7 @@
       <% @userphotos.each do |userphoto| %>
       <tr>
         <td><%= userphoto.review.user_id %></td>
-        <td><%= userphoto.photo %></td>
+        <td><img src='<%= userphoto.photo %>' class='img-responsive'></td>
         <td><%= userphoto.restaurant.name %></td>
         <td>
           <a href="/userphotos/<%= userphoto.id %>" class="btn btn-primary">Show</a>
